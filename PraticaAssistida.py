@@ -7,7 +7,7 @@ import joblib
 # Configuração inicial
 st.set_page_config(page_title='Predição de Imóveis', layout='wide')
 
-# Carregar modelo e dados
+# Carregar modelo
 @st.cache_resource
 def load_assets():
     model = joblib.load('modelo.pkl')
@@ -22,7 +22,7 @@ st.markdown('Solução de ML com Random Forest para o dataset Boston House Price
 st.sidebar.header('⚙️ Atributos do Imóvel')
 crim = st.sidebar.number_input('CRIM (Taxa crime)', value=0.36)
 indus = st.sidebar.number_input('INDUS (Indústria)', value=11.0)
-chas_label = st.sidebar.selectbox('Limite com Rio?', ('Sim', 'Não'))
+chas_label = st.sidebar.selectbox('Faz limite com o rio?', ('Sim', 'Não'))
 chas = 1 if chas_label == 'Sim' else 0
 nox = st.sidebar.number_input('NOX (Ox. Nítrico)', value=0.55)
 rm = st.sidebar.number_input('RM (Quartos)', value=6.0)
