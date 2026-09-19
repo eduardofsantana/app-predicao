@@ -42,7 +42,7 @@ st.plotly_chart(fig, use_container_width=True)
 st.sidebar.header('⚙️ Atributos para Predição')
 crim = st.sidebar.number_input('CRIM (Taxa crime)', value=float(data.CRIM.mean()))
 indus = st.sidebar.number_input('INDUS (Indústria)', value=float(data.INDUS.mean()))
-chas_label = st.sidebar.selectbox('Limite com rio?', ('Sim', 'Não'))
+chas_label = st.sidebar.selectbox('Faz limite com rio?', ('Sim', 'Não'))
 chas = 1 if chas_label == 'Sim' else 0
 nox = st.sidebar.number_input('NOX (Ox. Nítrico)', value=float(data.NOX.mean()))
 rm = st.sidebar.number_input('RM (Quartos)', value=6.0)
